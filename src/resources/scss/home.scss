@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --main-color: rgb(91, 174, 233);
+}
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+ul {
+    list-style: none;
+}
+//
+a {
+    text-decoration: none;
+}
+//
+video {
+    object-fit: cover;
+    height: 90vh;
+    width: 100vw;
+}
+//
+@keyframes fade {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+}
+//
+.header-content {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0 50px 0 50px;
+    z-index: 2;
+}
+//
+.header-content > h1 {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 40px;
+    margin-top: 30%;
+}
+//
+.header-content > p {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 25px;
+}
+//
+.header-content form {
+    background-color: #fff;
+    padding: 25px 40px 20px 30px;
+    margin-top: 25px;
+    width: 90%;
+}
+//
+.header-content form h1 {
+    color: #333;
+    text-align: center;
+    font-size: 25px;
+}
+//
+.header-content form select,
+.header-content input {
+    width: 100%;
+    height: 38px;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: #dddddd;
+    padding-left: 10px;
+}
+//
+.header-content form p {
+    text-align: left;
+    color: var(--main-color);
+    margin: 8px 0 3px;
+    font-size: 17px;
+}
+//
+.header-content form button {
+    height: 35px;
+    width: 150px;
+    background-color: var(--main-color);
+    color: #fff;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-left: 20%;
+}
+#menu {
+    display: none;
+}
+#menu.show {
+    display: block;
+}
+.nice-place {
+    padding: 40px 0;
+    position: relative;
+}
+.nice-place h1 {
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.seperate {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.fa-minus {
+    color: #d11313;
+}
+.nice-place-text {
+    width: 90%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(225, 255, 255, 0)
+    );
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    height: 57%;
+}
+.nice-place-text h2 {
+    color: var(--main-color);
+    font-size: 20px;
+    margin: 0;
+}
+.nice-place-text i {
+    color: yellow;
+    font-size: 15px;
+}
+.nice-place-text p {
+    color: #fff;
+    font-size: 13px;
+    margin: 0;
+}
+.nice-place-text button {
+    height: 30px;
+    width: 30%;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    margin-top: 5px;
+    margin-right: 100px;
+    font-size: 100%;
+}
+.nice-place-text button:hover {
+    background-color: limegreen;
+}
+.dash {
+    height: 5px;
+    width: 150px;
+    background-color: var(--main-color);
+    margin: 10px 10px;
+    border-radius: 6px;
+}
+.seperate i {
+    color: red;
+    font-size: 25px;
+}
+
+.carousel-control-next {
+    height: 90vh;
+}
+.carousel-control-prev {
+    height: 90vh;
+}
+.btn-outline-info {
+    width: 200px;
+    border-radius: 6px;
+    border: 2px solid deepskyblue !important;
+    font-weight: 600 !important;
+}
+.btn-outline-info:hover {
+    color: #fff !important;
+}
+.search-content-item {
+    position: relative;
+}
+
+.input-search {
+    width: 300px;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.autobox {
+    position: absolute;
+    width: 256px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.autobox.active {
+    display: block;
+}
+
+.autobox li {
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.autobox li:hover {
+    background-color: #f2f2f2;
+}
+.testimonial-section {
+    background-color: #ffffff;
+    min-height: 80vh;
+}
+.testi-img .img-box {
+    max-width: 360px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+.testi-img .circle {
+    height: 360px;
+    width: 360px;
+    background-color: #fb9c9a;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    bottom: 0;
+    transition: all 0.5s ease;
+}
+.testi-img .img-box-inner {
+    position: relative;
+    border-radius: 0 0 180px 180px;
+    overflow: hidden;
+}
+.testi-img .img-box-inner img {
+    max-width: 310px;
+}
+.testimonial-section .carousel-inner {
+    margin-bottom: 20px;
+}
+.testimonial-section .carousel-control-prev {
+    margin-right: 10px;
+}
+.testimonial-section .carousel-control-next,
+.testimonial-section .carousel-control-prev {
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: #fb9c9a;
+    display: inline-flex;
+    border-radius: 50%;
+}
+.testimonial-section .carousel-control-prev img,
+.testimonial-section .carousel-control-next img {
+    width: 15px;
+}
+.testi-item h3,
+.testi-item p {
+    font-size: 18px;
+}
+.testi-item h3 {
+    text-transform: capitalize;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .testi-img .img-box {
+        max-width: 300px;
+    }
+    .testi-img .circle {
+        height: 300px;
+        width: 300px;
+    }
+    .testi-img .img-box-inner {
+        border-radius: 0 0 150px 150px;
+    }
+    .testi-img .img-box-inner img {
+        max-width: 230px;
+    }
+}
+@media (max-width: 767px) {
+    .testi-img {
+        margin-bottom: 25px;
+    }
+}
+//-------------------Product-----------------------------//
+:root {
+    --main-color: rgb(91, 174, 233);
+}
+.header-product {
+    margin-left: 30px;
+    color: yellow;
+}
+.product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.product-container {
+    padding: 0 10px;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin-left: 30px;
+}
+
+.product-container::-webkit-scrollbar {
+    display: none;
+}
+
+.product-container .product-card {
+    flex: 0 0 auto;
+    width: 440px;
+    height: 350px;
+    margin-right: 40px;
+}
+
+.product-container .product-card .product-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+@media (min-height: 400px) {
+    .product-container .product-card {
+        width: 320px;
+        height: 200px;
+        flex: 0 0 auto;
+        margin-right: 40px;
+    }
+    .product-image{
+        height: 200px;
+    }
+}
+
+.product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.discount-tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.product-card:hover .card-btn {
+    opacity: 1;
+}
+
+.card-btn:hover {
+    background: #ff7d7d;
+    color: #fff;
+}
+.pre-btn,
+.nxt-btn {
+    border: none;
+    position: absolute;
+    top: 46%;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 8;
+    height: 35px;
+    width: 35px;
+    background-color: #fb9c9a;
+    display: inline-flex;
+    border-radius: 50%;
+}
+
+.pre-btn {
+    left: 10px;
+}
+
+.nxt-btn {
+    right: 10px;
+}
+.nice-place-text {
+    z-index: 1 !important;
+}
+.nice-place-text {
+    width: 95%;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(225, 255, 255, 0)
+    );
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    height: 48%;
+}
+.nice-place-text h2 {
+    color: var(--main-color);
+    font-size: 20px;
+    margin: 0;
+}
+.nice-place-text i {
+    color: yellow;
+    font-size: 15px;
+}
+.nice-place-text p {
+    color: #fff;
+    font-size: 13px;
+    margin: 0;
+}
+.nice-place-text button {
+    height: 30px;
+    width: 150px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    border: none;
+    margin-top: 5px;
+    margin-right: 100px;
+    font-size: 100%;
+}
+.nice-place-text button:hover {
+    background-color: limegreen;
+}
+//--------------------------------Discount---------------------------------------------

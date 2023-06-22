@@ -1,0 +1,28 @@
+* {
+    list-style: none;
+    text-decoration: none;
+}
+.footer-ul {
+    padding-left: 0;
+}
+.footer a {
+    text-decoration: none;
+    color: inherit !important;
+}
+.logo {
+    font-size: 45px;
+    font-family: 'SVN-Zailla Script';
+    font-weight: 700;
+}
+.social-network-list li {
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-network-list {
+    line-height: 15px;
+}
+.footer {
+    background-color: #cbc8c8;
+    position: relative;
+    top: 30px;
+}

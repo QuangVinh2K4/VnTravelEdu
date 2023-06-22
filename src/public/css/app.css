@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.row {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 0; }
+
+.card-course-item {
+  margin-bottom: 30px; }

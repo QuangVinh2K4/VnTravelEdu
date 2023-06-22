@@ -1,0 +1,6 @@
+.row {
+  justify-content: space-evenly;
+  flex-wrap: wrap; }
+
+.card-course-item {
+  margin-bottom: 30px; }

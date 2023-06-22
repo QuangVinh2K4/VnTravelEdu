@@ -1,0 +1,56 @@
+<nav class='navbar-dark'>
+    <div class='menu-icon'>
+        <span class='fas fa-bars'></span>
+    </div>
+    <div class='nav-left'>
+        <form action='#'>
+            <input
+                type='search'
+                class='search-data'
+                placeholder='Search'
+                required
+            />
+            <button type='submit' class='fas fa-search'></button>
+        </form>
+    </div>
+    <div class='nav-right'>
+        <div class='logo'>
+            VnTravel
+        </div>
+        <div class='nav-items'>
+            <li><a href='/'>Trang chủ</a></li>
+            <li><a href='/users/information'>Thông tin của bạn</a></li>
+            <li class='nav-item dropdown'>
+                <a
+                    class='nav-link dropdown-toggle'
+                    href='#'
+                    id='dropdown01'
+                    data-toggle='dropdown'
+                    aria-haspopup='true'
+                    aria-expanded='false'
+                >Chọn địa điểm</a>
+                <div class='dropdown-menu' aria-labelledby='dropdown01'>
+                    <a><p class='Mien-Bac'>Miền Bắc</p></a>
+                    <hr />
+                    <a><p class='Mien-Trung'>Miền Trung</p></a>
+                    <hr />
+                    <a><p class='Mien-Tay'>Miền Tây</p></a>
+                </div>
+            </li>
+            <li><a href='/about-us/information'>Về chúng tôi</a></li>
+<!--                        <li><a href='/tours/create'>Đăng Tour Mới</a></li>-->
+            <li><a href='/users/information'> {{user.name}}</a></li>
+            <li class='open_form_register'><a
+                    href='/users/SignUp-and-SignIn'
+                >Đăng Nhập</a></li>
+        </div>
+    </div>
+
+    <div class='search-icon'>
+        <span class='fas fa-search'></span>
+    </div>
+    <div class='cancel-icon'>
+        <span class='fas fa-times'></span>
+    </div>
+
+</nav>

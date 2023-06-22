@@ -1,0 +1,346 @@
+<style>
+    video { object-fit: cover; height: 100vh; width: 100vw; }
+</style>
+<div class='video-container'>
+    <div
+        id='carouselExampleIndicators'
+        class='carousel slide'
+        data-bs-ride='carousel'
+        data-bs-interval='6000'
+        data-bs-wrap='true'
+    >
+        <div class='carousel-indicators' style='padding-bottom:50px'>
+            <button
+                type='button'
+                data-bs-target='#carouselExampleIndicators'
+                data-bs-slide-to='0'
+                class='active'
+                aria-current='true'
+                aria-label='Slide 1'
+                style='width:8%;padding-top:4px;margin:0 12px 15px 0;border-radius:5px'
+            ></button>
+            <button
+                type='button'
+                data-bs-target='#carouselExampleIndicators'
+                data-bs-slide-to='1'
+                aria-label='Slide 2'
+                style='width:8%;padding-top:4px;margin:0 12px 15px 0;border-radius:5px'
+            ></button>
+            <button
+                type='button'
+                data-bs-target='#carouselExampleIndicators'
+                data-bs-slide-to='2'
+                aria-label='Slide 3'
+                style='width:8%;padding-top:4px;margin:0 12px 15px 0;border-radius:5px'
+            ></button>
+        </div>
+        <div class='carousel-inner'>
+            <div class='carousel-item active' style='width: 100%;height:100vh'>
+                <video
+                    src='video/saigon.mp4'
+                    autoplay
+                    muted
+                    loop
+                    style='width: 100vw'
+                ></video>
+            </div>
+            <div class='carousel-item' style='width: 100%;height:100vh'>
+                <video
+                    src='video/May.mp4'
+                    autoplay
+                    muted
+                    loop
+                    style='width: 100vw'
+                ></video>
+            </div>
+            <div class='carousel-item' style='width: 100%;height: 100vh'>
+                <video
+                    src='video/Hoang_Hon_Tren_Bien.mp4'
+                    autoplay
+                    muted
+                    loop
+                    style='width: 100vw'
+                ></video>
+            </div>
+
+        </div>
+        <button
+            class='carousel-control-prev'
+            type='button'
+            data-bs-target='#carouselExampleIndicators'
+            data-bs-slide='prev'
+        >
+            <span
+                class='carousel-control-prev-icon'
+                aria-hidden='true'
+                style='font-size:20px;width: 40px; height: 40px;'
+            ></span>
+            <span
+                class='visually-hidden'
+                style='font-size:20px;width: 40px; height: 40px;'
+            >Previous</span>
+        </button>
+        <button
+            class='carousel-control-next'
+            type='button'
+            data-bs-target='#carouselExampleIndicators'
+            data-bs-slide='next'
+            fdprocessedid='litv0b'
+        >
+            <span
+                class='carousel-control-next-icon'
+                aria-hidden='true'
+                style='font-size:40px;width: 40px; height: 40px;'
+            ></span>
+            <span
+                class='visually-hidden'
+                style='font-size:40px;width: 40px; height: 40px;'
+            >Next</span>
+        </button>
+    </div>
+</div>
+<div class='header-content'>
+    <h1>Du Lịch</h1>
+    <p>Tuổi trẻ là những chuyến đi</p>
+    <div style='display: flex;justify-content: center'>
+        <form action=''>
+            <h1>Đi để trở về</h1>
+            <p>Địa điểm</p>
+            <div class='search-content-item'>
+                <input type='text' class='input-search' placeholder='Search' />
+                <div class='autobox'>
+                    <ul>
+                        <li>Hà Nội</li>
+                        <li>Hải Phòng</li>
+                        <li>Quảng Nam</li>
+                        <li>Quảng Ngãi</li>
+                        <li>Hồ Chí Minh</li>
+                        <li>Đà Nẵng</li>
+                        <li>Đà Lạt</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Số người</p>
+            <input type='number' min='1' placeholder='Số người đi ' />
+            <p>Ngày đi</p>
+            <input type='date' name='' />
+            <p>Ngày về</p>
+            <input type='date' name='' />
+            <button>Tìm Kiếm</button>
+        </form>
+    </div>
+</div>
+<section class='nice-place'>
+    <h1>Địa điểm nổi bật</h1>
+    <div class='seperate'>
+        <div class='dash'></div>
+        <i class='fa-solid fa-heart'></i>
+        <div class='dash'></div>
+    </div>
+    <div class='header-product'>
+        <h2> Du lịch trong nước </h2>
+    </div>
+    <section class='product'>
+        <button class='pre-btn'><i
+                class='fa-solid fa-chevron-left'
+            ></i></button>
+        <button class='nxt-btn'><i
+                class='fa-solid fa-chevron-right'
+            ></i></button>
+        <div class='product-container'>
+            {{#each tours}}
+                {{#if (eq this.destination 'domestic')}}
+                    <div class='product-card'>
+                        <div class='product-image'>
+                            <span class='discount-tag'>50% off</span>
+                            <img
+                                src='{{this.main_image}}'
+                                class='product-thumb'
+                                alt=''
+                            />
+                            <div class='nice-place-text'>
+                                <h2>{{this.name}}</h2>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <i class='fa-solid fa-star'></i>
+                                <p>{{this.description}}</p>
+                                <div style='display: flex'>
+                                    <a href='/tours/{{this.slug}}'>
+                                        <button type='button'>Xem thêm</button>
+                                    </a>
+                                    <div
+                                        style='display: flex;background: #fff;border-radius:10px;padding:5px 13px;position: relative;bottom:5px'
+                                    >
+                                        <p
+                                            style='font-size: 20px;color: #323444'
+                                        >Giá:</p>
+                                        <p
+                                            style='font-size: 20px;color: #f13131'
+                                        >4.999.000đ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </section>
+    <div class='header-product'>
+        <h2> Du lịch nước ngoài </h2>
+    </div>
+    <section class='product'>
+        <button class='pre-btn'><i
+                class='fa-solid fa-chevron-left'
+            ></i></button>
+        <button class='nxt-btn'><i
+                class='fa-solid fa-chevron-right'
+            ></i></button>
+        <div class='product-container'>
+            {{#each tours}}
+                {{#if (eq this.destination 'foreign')}}
+                <div class='product-card'>
+                    <div class='product-image'>
+                        <span class='discount-tag'>50% off</span>
+                        <img
+                            src='{{this.main_image}}'
+                            class='product-thumb'
+                            alt=''
+                        />
+                        <div class='nice-place-text'>
+                            <h2>{{this.name}}</h2>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <i class='fa-solid fa-star'></i>
+                            <p>{{this.description}}</p>
+                            <div style='display: flex'>
+                                <a href='/tours/{{this.slug}}'>
+                                    <button type='button'>Xem thêm</button>
+                                </a>
+                                <div
+                                    style='display: flex;background: #fff;border-radius:10px;padding:5px 13px;position: relative;bottom:5px'
+                                >
+                                    <p
+                                        style='font-size: 20px;color: #323444'
+                                    >Giá:</p>
+                                    <p
+                                        style='font-size: 20px;color: #f13131'
+                                    >4.999.000đ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/if}}
+            {{/each}}
+        </div>
+    </section>
+    <div style='display: flex;justify-content: center'>
+        <button type='button' class='btn btn-outline-info'>Xem thêm</button>
+    </div>
+</section>
+<div class='Favorite-tour-guide-of-the-month'>
+    <h1 style='margin-left: 40px;'>
+        Các hướng dẫn viên được yêu thích nhất tháng 5
+    </h1>
+    <section class='testimonial-section d-flex align-items-center'>
+        <div class='container'>
+            <div class='row align-items-center'>
+                <div class='col-md-6 testi-img'>
+                    <div class='img-box'>
+                        <div class='circle'></div>
+                        <div class='img-box-inner'>
+                            <img src='img/1.png' alt='testi img' />
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-6'>
+                    <div
+                        id='myCarousel'
+                        class='carousel slide'
+                        data-bs-interval='5000'
+                        data-bs-ride='carousel'
+                    >
+                        <div class='carousel-inner'>
+                            <div
+                                class='carousel-item testi-item active'
+                                data-color='#fb9c9a'
+                                data-img='img/1.png'
+                            >
+                                <p>Hướng dẫn viên William Davis là một người
+                                    năng động, tràn đầy nhiệt huyết và có kinh
+                                    nghiệm lâu năm trong lĩnh vực du lịch. Anh
+                                    ấy sẽ đưa bạn khám phá những địa điểm độc
+                                    đáo, thưởng thức ẩm thực đặc trưng và trải
+                                    nghiệm cuộc sống địa phương tại các điểm
+                                    đến. Với sự tận tâm và chuyên nghiệp của anh
+                                    ấy, chuyến đi của bạn sẽ trở thành một kỷ
+                                    niệm đáng nhớ.</p>
+                                <h3>William Davis -
+                                    <span>Chuyên phục vụ các tour châu Âu</span></h3>
+                            </div>
+                            <div
+                                class='carousel-item testi-item'
+                                data-color='#fbd39a'
+                                data-img='img/2.png'
+                            >
+                                <p>Hướng dẫn viên Christopher Smith là một người
+                                    am hiểu lịch sử và văn hóa, với kiến thức
+                                    sâu rộng về các điểm đến. Anh ấy sẽ giúp bạn
+                                    hiểu rõ hơn về văn hóa và lịch sử của đất
+                                    nước, thông qua việc thăm quan các di tích,
+                                    bảo tàng và những địa điểm lịch sử nổi
+                                    tiếng. Với sự đam mê và kiến thức chuyên môn
+                                    của anh ấy, bạn sẽ có một chuyến đi tuyệt
+                                    vời.</p>
+                                <h3>Christopher Smith -
+                                    <span>Chuyên phục vụ các tour châu Á</span></h3>
+                            </div>
+                            <div
+                                class='carousel-item testi-item'
+                                data-color='#9ab0fb'
+                                data-img='img/3.png'
+                            >
+                                <p>Hướng dẫn viên Michael Johnson là một người
+                                    yêu thiên nhiên, đam mê khám phá và trải
+                                    nghiệm. Anh ấy sẽ dẫn bạn đến những địa điểm
+                                    tuyệt đẹp, nơi bạn có thể tận hưởng không
+                                    khí trong lành và khám phá các hoạt động
+                                    ngoài trời thú vị như dã ngoại, leo núi, đạp
+                                    xe, thuyền kayak và nhiều hơn nữa. Với niềm
+                                    đam mê và kinh nghiệm của anh ấy, chuyến đi
+                                    của bạn sẽ trở thành một cuộc phiêu lưu đáng
+                                    nhớ.</p>
+                                <h3>Michael Johnson -
+                                    <span>Chuyên phục vụ các tour khu vực Đông
+                                        Nam Á</span></h3>
+                            </div>
+                        </div>
+                        <button
+                            class='carousel-control-prev'
+                            type='button'
+                            data-bs-target='#myCarousel'
+                            data-bs-slide='prev'
+                        >
+                            <i class='fa-solid fa-chevron-left'></i>
+                            <span class='visually-hidden'>Previous</span>
+                        </button>
+                        <button
+                            class='carousel-control-next'
+                            type='button'
+                            data-bs-target='#myCarousel'
+                            data-bs-slide='next'
+                        >
+                            <i class='fa-solid fa-chevron-right'></i>
+                            <span class='visually-hidden'>Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
